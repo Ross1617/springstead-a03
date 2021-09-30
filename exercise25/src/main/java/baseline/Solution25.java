@@ -5,8 +5,6 @@
 
 package baseline;
 import java.util.Scanner;
-import java.io.*;
-import java.util.*;
 
 public class Solution25 {
     private static final Scanner in = new Scanner(System.in);
@@ -23,7 +21,7 @@ A weak password contains only letters and is fewer than eight characters.
 A strong password contains letters and at least one number and is at least eight characters.
 A very strong password contains letters, numbers, and special characters and is at least eight characters.
  */
-    private int passwordValidator (String password){
+    public int passwordValidator (String password){
         //takes a password as the input and returns a number 1-5 depending on the strength
         //char[] passwordArray = password.toCharArray();
         //create a variable that gets the length of the password
@@ -46,7 +44,6 @@ A very strong password contains letters, numbers, and special characters and is 
                 //if so sets specialCharacter to true
                 specialCharacter = true;
             }
-
         }
         //if password is longer than eight keep going
         if (length > 7){
@@ -64,7 +61,6 @@ A very strong password contains letters, numbers, and special characters and is 
                 // return 5 for case where this result was not specified
                 return 5;
             }
-
         }
         else{
             //if the password is only made out of numbers
@@ -106,19 +102,16 @@ A very strong password contains letters, numbers, and special characters and is 
             //add weak password to result string
             printResult = printResult + password + " is a weak password.";
         }
-
         //if the result is 3
         if(result ==3){
             //add strong password to result string
             printResult = printResult + password + " is a strong password.";
         }
-
         //if result is 4
         if(result ==4){
             //add very strong password to result string
             printResult = printResult + password + " is a very strong password.";
         }
-
         //if result is 5
         if(result ==5){
             //add case not specified to result string
