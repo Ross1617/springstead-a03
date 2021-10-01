@@ -26,8 +26,9 @@ public class Solution28 {
         }
         //print the output counter
         //return counter
-        System.out.printf("The total is %d",value);
+        System.out.printf("The total is %d.",value);
         return value;
+
 
     }
     public static void main(String[] args) {
