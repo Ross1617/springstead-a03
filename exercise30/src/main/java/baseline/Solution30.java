@@ -44,11 +44,8 @@ public class Solution30 {
         //promtps the user for a number and saves the value
         Solution30 sol = new Solution30();
 
-        //prompts the user for another number and saves the value
-        int num1 = sol.readInput("Give me the height");
-        int num2 = sol.readInput("Give me the width");
         //calls tableMaker with the two values
-        sol.tableMaker(num1, num2);
+        sol.tableMaker(12, 12);
 
     }
 }
