@@ -13,12 +13,20 @@ public class Solution26 {
         return in.nextInt();
     }
     public static void main(String[] args) {
-
-
+        Solution26 sol = new Solution26();
         //prompts the user for their balance, rates, and payments
+        int balance = sol.readInt("What is your balance?");
+        int dailyRates = sol.readInt("What is the APR on the card (as a percent)?");
+        int monthlyPayment = sol.readInt("What is the monthly payment you can make?");
         //call the payment class and initialize all the values
         //call the calculatemonthsuntilpaidoff
+        PaymenetCalculator payment = new PaymenetCalculator(dailyRates,balance,monthlyPayment);
+        double months = payment.calculateMonthsUntilPaidOff();
         //print the output
+        System.out.printf("%f",months);
+
+
+
 
 
     }
