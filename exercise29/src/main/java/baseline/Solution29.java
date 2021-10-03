@@ -6,24 +6,39 @@ package baseline;
 import java.util.Scanner;
 public class Solution29 {
     private static final Scanner in = new Scanner(System.in);
-    private String readInput(String prompt){
-        //prompts user with string that was provided
-        //check the input if it is not a number or 0
-            //if its reprompts the user
-        //returns the users next line
-
+    private int readInput(String prompt){
+        int number;
+        do {
+            //prompts the user for an input
+            System.out.printf("%s",prompt);
+            while (!in.hasNextInt()) {
+                //prompts the user again for a new number
+                String input = in.next();
+                System.out.printf("\"%s\" is not a valid number.\n", input);
+            }
+            number = in.nextInt();
+            //checks to see if the value is a positive number
+        } while (number <= 0);
+        //returns a positive number
+        return number;
     }
-    public int calculate(int number){
+    public double calculate(int number){
         //takes the input and uses the formula 72/ number
+        double years = 72/ number;
         //prints the number of years
+        System.out.printf("It will take %.2f years to double your initial investment.",years);
         //returns the number of years
+        return years;
     }
 
     public static void main(String[] args) {
         Solution29 sol = new Solution29();
         //calls the readInput function
+        int number = sol.readInput("What is the rate of return?");
         //and assigns the number to a variable
         //calls the calculate function
+        sol.calculate(number);
+
 
     }
 }
