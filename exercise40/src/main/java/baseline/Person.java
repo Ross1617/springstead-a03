@@ -38,9 +38,31 @@ public class Person {
         return separationDate;
     }
     public String findName(String name){
+
         //checks to see if the first name contains name
         //checks to see if the last name contains name
         //if either contain print it and return the name
+        int number =0;
+        if(getFirstName().contains(name)){
+            number =1;
+        }
+        else if (getLastName().contains(name)){
+            number =1;
+        }
+        if(number == 1){
+            if(getSeparationDate() == null){
+                System.out.printf("%s %s        %s  \n",getFirstName(), getLastName(), getDepartment());
+                return getLastName();
+            }
+            else {
+                System.out.printf("%s %s     %s  %s\n",getFirstName(), getLastName(), getDepartment(), getSeparationDate());
+                return getLastName();
+            }
+
+        }
+        else{
+            return "";
+        }
     }
 
 
